@@ -11,7 +11,7 @@ IndiLetterAnim.prototype.separateLetters = function(){
   //maybe some regex here to replace
   //white space and punctuation
   //with according html entity
-  let replaceWhite = this.str.replace(/\s+/g, '\u00a0');
+  let replaceWhite = this.str.replace(/[\s]/g, '\u00a0');
   augArr = replaceWhite.split(' ').toString();
   arr = augArr.split('');
   //regex added
