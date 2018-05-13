@@ -1,4 +1,4 @@
-function IndiLetterAnim(str, elem){
+function letterToList(str, elem){
   //maybe add cache here to store already appended elems
   //so that we can program the function to only
   //construct  new Objects if an elem isnt repeated
@@ -7,12 +7,12 @@ function IndiLetterAnim(str, elem){
   this.elem = document.querySelector(elem);
 }
 
-IndiLetterAnim.prototype.separateLetters = function(){
+letterToList.prototype.separateLetters = function(){
   //maybe some regex here to replace
   //white space and punctuation
   //with according html entity
-  let replaceWhite = this.str.replace(/[\s]/g, '\u00a0');
-  augArr = replaceWhite.split(' ').toString();
+  let replaceSpace = this.str.replace(/[\s]/g, '\u00a0');
+  augArr = replaceSpace.split(' ').toString();
   arr = augArr.split('');
   //regex added
   let ul = document.createElement('UL');
@@ -28,6 +28,6 @@ IndiLetterAnim.prototype.separateLetters = function(){
   this.elem.appendChild(ul);
 }
 
-let indi1 = new IndiLetterAnim('test test', '.letter-anim');
+let indi1 = new letterToList('test test', '.letter-anim');
 indi1.separateLetters();
 console.log(indi1.elem.innerHTML);
